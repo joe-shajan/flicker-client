@@ -8,6 +8,7 @@ import { WebsocketProvider } from "y-websocket";
 import * as Y from "yjs";
 import "../styles/editor.css";
 import { docLogo } from "@/constants";
+import { useModal } from "@/hooks";
 
 const CustomToolbar = () => (
   <div id="toolbar" className="flex gap-4 bg-slate-100 rounded-lg">
@@ -39,6 +40,7 @@ const CustomToolbar = () => (
 export const Editor = () => {
   console.log("in editor");
   const { id } = useParams();
+  const { Modal, openModal, closeModal } = useModal();
 
   let quillRef: any = null;
   let reactQuillRef: any = null;
@@ -123,7 +125,10 @@ export const Editor = () => {
           </div>
 
           <div className="flex gap-6 items-center">
-            <button className="bg-slate-900 h-9 px-3 rounded-md text-white">
+            <button
+              onClick={openModal}
+              className="bg-slate-900 h-9 px-3 rounded-md text-white"
+            >
               Share
             </button>
 
@@ -153,6 +158,12 @@ export const Editor = () => {
           {/* <div className="h-[50%] w-[100%] bg-white rounded-md"></div> */}
         </div>
       </div>
+      <Modal>
+        <div className="h-44 w-44 bg-red-600">
+          model content
+          <button onClick={closeModal}>X</button>
+        </div>
+      </Modal>
     </>
   );
 };
