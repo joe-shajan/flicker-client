@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import { useParams } from "react-router-dom";
 import "react-quill/dist/quill.snow.css";
@@ -40,6 +40,8 @@ const CustomToolbar = () => (
 );
 
 export const Editor = () => {
+  const [copied, setCopied] = useState(false);
+
   console.log("in editor");
   const { id } = useParams();
   const { Modal, openModal, closeModal } = useModal();
@@ -176,8 +178,21 @@ export const Editor = () => {
             <Button
               variant="outline"
               className="rounded-full border-blue-600 text-blue-600 hover:text-blue-700"
+              onClick={() => {
+                navigator.clipboard.writeText(window.location.href);
+                setCopied(true);
+                setTimeout(() => {
+                  setCopied(false);
+                }, 2000);
+              }}
             >
-              <Lock className="mr-2 h-4 w-4" /> Copy Link
+              {copied ? (
+                "Copied"
+              ) : (
+                <>
+                  <Lock className="mr-2 h-4 w-4" /> Copy Link
+                </>
+              )}
             </Button>
             <Button>Done</Button>
           </div>
