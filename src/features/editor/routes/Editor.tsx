@@ -7,6 +7,7 @@ import { WebrtcProvider } from "y-webrtc";
 import { WebsocketProvider } from "y-websocket";
 import * as Y from "yjs";
 import "../styles/editor.css";
+import { docLogo } from "@/constants";
 
 const CustomToolbar = () => (
   <div id="toolbar" className="flex gap-4 bg-slate-100 rounded-lg">
@@ -105,8 +106,20 @@ export const Editor = () => {
 
   return (
     <>
-      <div className="h-[15vh] flex flex-col justify-between p-4">
-        <h4 className="text-lg">Docs</h4>
+      <div className="h-[15vh] flex flex-col justify-between py-3 ps-4 pe-4">
+        <div className="flex gap-3">
+          <div>{docLogo()}</div>
+          <div className="flex flex-col justify-between">
+            <h4 className="text-lg font-semibold text-slate-600 leading-none">
+              Doc name
+            </h4>
+            <div className="flex gap-2 text-xs text-slate-600 leading-none">
+              <p>File</p>
+              <p>Edit</p>
+              <p>View</p>
+            </div>
+          </div>
+        </div>
         <CustomToolbar />
       </div>
       <div className="bg-slate-100 flex p-6 gap-6 justify-center">
@@ -126,7 +139,7 @@ export const Editor = () => {
         />
         <div className="flex flex-col gap-6 w-1/5">
           <div className="h-[50%] w-[100%] bg-white rounded-md"></div>
-          <div className="h-[50%] w-[100%] bg-white rounded-md"></div>
+          {/* <div className="h-[50%] w-[100%] bg-white rounded-md"></div> */}
         </div>
       </div>
     </>
