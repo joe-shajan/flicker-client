@@ -71,7 +71,7 @@ export const Editor = () => {
     const provider = new WebrtcProvider(id, ydoc);
 
     // Sync clients with the y-websocket provider
-    new WebsocketProvider("wss://localhost:1234", id, ydoc);
+    new WebsocketProvider("ws://localhost:1234", "", ydoc);
 
     const ytext = ydoc.getText("quill");
 
