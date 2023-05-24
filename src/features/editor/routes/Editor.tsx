@@ -9,6 +9,8 @@ import * as Y from "yjs";
 import "../styles/editor.css";
 import { docLogo } from "@/constants";
 import { useModal } from "@/hooks";
+import { Button, Input } from "@/components";
+import { Lock, X } from "lucide-react";
 
 const CustomToolbar = () => (
   <div id="toolbar" className="flex gap-4 bg-slate-100 rounded-lg">
@@ -125,12 +127,9 @@ export const Editor = () => {
           </div>
 
           <div className="flex gap-6 items-center">
-            <button
-              onClick={openModal}
-              className="bg-slate-900 h-9 px-3 rounded-md text-white"
-            >
-              Share
-            </button>
+            <Button onClick={openModal}>
+              <Lock className="mr-2 h-4 w-4" /> Share
+            </Button>
 
             <div className="w-9 h-9 bg-gray-300 rounded-full"></div>
           </div>
@@ -159,28 +158,28 @@ export const Editor = () => {
         </div>
       </div>
       <Modal>
-        <div className="h-[360px] w-[600px] bg-white rounded-md">
+        <div className="h-[360px] w-[600px] bg-white rounded-md flex flex-col justify-between">
           <div className="h-[50px] flex justify-between px-6 border-b-2 border-slate-100 items-center">
             <p>Share</p>
             <button
               onClick={closeModal}
               className=" hover:bg-slate-100 rounded-full p-1"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <X />
             </button>
+          </div>
+          <div className="p-6 flex-1">
+            <Input placeholder="Enter Email..." />
+          </div>
+
+          <div className="h-16 border-t-2 border-slate-100 flex justify-between items-center p-6">
+            <Button
+              variant="outline"
+              className="rounded-full border-blue-600 text-blue-600 hover:text-blue-700"
+            >
+              <Lock className="mr-2 h-4 w-4" /> Copy Link
+            </Button>
+            <Button>Done</Button>
           </div>
         </div>
       </Modal>
