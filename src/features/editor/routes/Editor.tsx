@@ -132,7 +132,7 @@ export const Editor = () => {
         </div>
         <CustomToolbar />
       </div>
-      <div className="bg-slate-100 flex p-6 gap-6 justify-center">
+      <div className="bg-slate-100 flex p-4 gap-4 justify-center">
         <ReactQuill
           ref={(el: any) => {
             reactQuillRef = el;
@@ -140,7 +140,7 @@ export const Editor = () => {
           modules={modules}
           formats={formats}
           style={{
-            minHeight: "calc(85vh - 48px)",
+            height: "calc(85vh - 32px)",
             width: "50%",
             background: "#fff",
             border: "0px !important",
