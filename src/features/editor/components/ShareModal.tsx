@@ -4,7 +4,7 @@ import { Lock, X } from "lucide-react";
 
 type Props = {
   closeModal: () => void;
-  Modal: any;
+  Modal: React.FC<any>;
 };
 
 const ShareModal = ({ closeModal, Modal }: Props) => {
