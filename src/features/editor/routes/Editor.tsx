@@ -139,6 +139,7 @@ export const Editor = () => {
           }}
           modules={modules}
           formats={formats}
+          placeholder="Start writing..."
           style={{
             height: "calc(85vh - 32px)",
             width: "50%",
