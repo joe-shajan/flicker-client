@@ -106,18 +106,28 @@ export const Editor = () => {
 
   return (
     <>
-      <div className="h-[15vh] flex flex-col justify-between py-3 ps-4 pe-4">
-        <div className="flex gap-3">
-          <div>{docLogo()}</div>
-          <div className="flex flex-col justify-between">
-            <h4 className="text-lg font-semibold text-slate-600 leading-none">
-              Doc name
-            </h4>
-            <div className="flex gap-2 text-xs text-slate-600 leading-none">
-              <p>File</p>
-              <p>Edit</p>
-              <p>View</p>
+      <div className="h-[15vh] flex flex-col justify-between py-3 ps-8 pe-8">
+        <div className="flex justify-between">
+          <div className="flex gap-3">
+            <div>{docLogo()}</div>
+            <div className="flex flex-col justify-between">
+              <h4 className="text-lg font-semibold text-slate-600 leading-none">
+                Doc name
+              </h4>
+              <div className="flex gap-2 text-xs text-slate-600 leading-none">
+                <p>File</p>
+                <p>Edit</p>
+                <p>View</p>
+              </div>
             </div>
+          </div>
+
+          <div className="flex gap-6 items-center">
+            <button className="bg-slate-900 h-9 px-3 rounded-md text-white">
+              Share
+            </button>
+
+            <div className="w-9 h-9 bg-gray-300 rounded-full"></div>
           </div>
         </div>
         <CustomToolbar />
