@@ -159,9 +159,29 @@ export const Editor = () => {
         </div>
       </div>
       <Modal>
-        <div className="h-44 w-44 bg-red-600">
-          model content
-          <button onClick={closeModal}>X</button>
+        <div className="h-[360px] w-[600px] bg-white rounded-md">
+          <div className="h-[50px] flex justify-between px-6 border-b-2 border-slate-100 items-center">
+            <p>Share</p>
+            <button
+              onClick={closeModal}
+              className=" hover:bg-slate-100 rounded-full p-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </Modal>
     </>
