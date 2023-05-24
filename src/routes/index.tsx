@@ -3,7 +3,7 @@ import { useRoutes } from "react-router-dom";
 import { Landing } from "@/features/misc";
 // import { useAuth } from '@/lib/auth';
 
-// import { protectedRoutes } from "./protected";
+import { protectedRoutes } from "./protected";
 // import { publicRoutes } from "./public";
 
 const Pricing = () => {
@@ -25,7 +25,7 @@ export const AppRoutes = () => {
   // const routes = auth.user ? protectedRoutes : publicRoutes;
 
   // const element = useRoutes([...protectedRoutes, ...publicRoutes, ...commonRoutes]);
-  const element = useRoutes([...commonRoutes]);
+  const element = useRoutes([...protectedRoutes, ...commonRoutes]);
 
   return <>{element}</>;
 };
