@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { Button, Input } from '@/components';
 import { Lock, X } from 'lucide-react';
+import { useState } from 'react';
+
+import { Button, Input } from '@/components';
 
 type Props = {
   closeModal: () => void;

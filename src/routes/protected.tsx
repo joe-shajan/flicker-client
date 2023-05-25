@@ -1,7 +1,8 @@
-import { Outlet, useNavigate } from 'react-router-dom';
-import { lazyImport } from '@/utils/lazyImport';
 import { Suspense } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
+
 import { SettingsLayout } from '@/components/Layout/ProfileLayout';
+import { lazyImport } from '@/utils/lazyImport';
 const { Editor } = lazyImport(() => import('@/features/editor'), 'Editor');
 
 const Settings = () => {

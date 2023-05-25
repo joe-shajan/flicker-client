@@ -33,6 +33,8 @@ const Modal = ({ children, isOpen, onClose }: ModalProps) => {
             zIndex: 4,
           }}
           onClick={onClose}
+          onKeyDown={onClose}
+          role='presentation'
         />
         <div
           style={{

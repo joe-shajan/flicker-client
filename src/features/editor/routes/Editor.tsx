@@ -1,3 +1,4 @@
+import { Lock } from 'lucide-react';
 import { useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import { useParams } from 'react-router-dom';
@@ -6,13 +7,14 @@ import { QuillBinding } from 'y-quill';
 import { WebrtcProvider } from 'y-webrtc';
 import { WebsocketProvider } from 'y-websocket';
 import * as Y from 'yjs';
+
 import '../styles/editor.css';
+import { Button } from '@/components';
 import { docLogo } from '@/constants';
 import { useModal } from '@/hooks';
-import { Button } from '@/components';
-import { Lock } from 'lucide-react';
-import ShareModal from '../components/ShareModal';
+
 import { CustomToolbar } from '../components/CustomToolbar';
+import ShareModal from '../components/ShareModal';
 
 const Header = ({ openModal }: { openModal: () => void }) => {
   return (
