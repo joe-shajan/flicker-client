@@ -25,17 +25,14 @@
 
 // export default App;
 
-// import { AppProvider } from "@/providers/app";
-import { BrowserRouter } from "react-router-dom";
+import { AppProvider } from "@/providers/app";
 import { AppRoutes } from "./routes";
 
 const App = () => {
   return (
-    // <AppProvider>
-    <BrowserRouter>
+    <AppProvider>
       <AppRoutes />
-    </BrowserRouter>
-    // </AppProvider>
+    </AppProvider>
   );
 };
 

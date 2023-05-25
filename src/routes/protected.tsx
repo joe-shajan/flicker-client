@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 // import { lazyImport } from "@/utils/lazyImport";
 // const { Editor } = lazyImport(() => import("@/features/editor"), "Editor");
 import { Editor } from "@/features/editor";
+
 // const Settings = () => {
 //     const navigate = useNavigate();
 //     useEffect(() => {
