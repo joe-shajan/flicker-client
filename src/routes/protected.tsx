@@ -1,15 +1,15 @@
-import { Outlet, useNavigate } from "react-router-dom";
-import { lazyImport } from "@/utils/lazyImport";
-import { Suspense } from "react";
-import { SettingsLayout } from "@/components/Layout/ProfileLayout";
-const { Editor } = lazyImport(() => import("@/features/editor"), "Editor");
+import { Outlet, useNavigate } from 'react-router-dom';
+import { lazyImport } from '@/utils/lazyImport';
+import { Suspense } from 'react';
+import { SettingsLayout } from '@/components/Layout/ProfileLayout';
+const { Editor } = lazyImport(() => import('@/features/editor'), 'Editor');
 
 const Settings = () => {
   return (
     <SettingsLayout>
       <Suspense
         fallback={
-          <div className="h-full w-full flex items-center justify-center">
+          <div className='h-full w-full flex items-center justify-center'>
             {/* <Spinner size="sm" /> */}
           </div>
         }
@@ -23,11 +23,11 @@ const Settings = () => {
 const Profile = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center gap-4 pt-8">
-      <h1 className="text-4xl">profile</h1>
+    <div className='flex flex-col items-center gap-4 pt-8'>
+      <h1 className='text-4xl'>profile</h1>
       <button
-        onClick={() => navigate("/docs")}
-        className="bg-black text-white p-3 rounded-xl content-center"
+        onClick={() => navigate('/docs')}
+        className='bg-black text-white p-3 rounded-xl content-center'
       >
         go back to docs
       </button>
@@ -38,11 +38,11 @@ const Profile = () => {
 const MyPlan = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center gap-4 pt-8">
-      <h1 className="text-4xl">Myplan</h1>
+    <div className='flex flex-col items-center gap-4 pt-8'>
+      <h1 className='text-4xl'>Myplan</h1>
       <button
-        onClick={() => navigate("/docs")}
-        className="bg-black text-white p-3 rounded-xl content-center"
+        onClick={() => navigate('/docs')}
+        className='bg-black text-white p-3 rounded-xl content-center'
       >
         go back to docs
       </button>
@@ -53,11 +53,11 @@ const MyPlan = () => {
 const Docs = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center gap-4 pt-8">
-      <h1 className="text-4xl">docs</h1>
+    <div className='flex flex-col items-center gap-4 pt-8'>
+      <h1 className='text-4xl'>docs</h1>
       <button
-        onClick={() => navigate("/docs/12342332")}
-        className="bg-black text-white p-3 rounded-xl content-center"
+        onClick={() => navigate('/docs/12342332')}
+        className='bg-black text-white p-3 rounded-xl content-center'
       >
         Go to editor
       </button>
@@ -67,19 +67,19 @@ const Docs = () => {
 
 export const protectedRoutes = [
   {
-    path: "/docs",
+    path: '/docs',
     element: <Docs />,
   },
   {
-    path: "/docs/:id",
+    path: '/docs/:id',
     element: <Editor />,
   },
   {
-    path: "/settings",
+    path: '/settings',
     element: <Settings />,
     children: [
-      { path: "profile", element: <Profile /> },
-      { path: "my-plan", element: <MyPlan /> },
+      { path: 'profile', element: <Profile /> },
+      { path: 'my-plan', element: <MyPlan /> },
     ],
   },
 ];

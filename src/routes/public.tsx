@@ -8,7 +8,7 @@ const AuthRoutes = () => {
 
 export const publicRoutes = [
   {
-    path: "/auth/*",
+    path: '/auth/*',
     element: <AuthRoutes />,
   },
 ];
